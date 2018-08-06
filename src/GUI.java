@@ -4,7 +4,6 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
@@ -50,7 +49,7 @@ public class GUI extends Application{
         Button buttonVolume = new Button("Volume");
         buttonVolume.setPrefSize(100, 20);
         buttonVolume.setOnAction(e ->
-                roots.setCenter(centerVolumePane()));
+                roots.setCenter(new VolumeConversion().getPane()));
 
 
         Button buttonCurrency = new Button("Currency");
@@ -61,7 +60,7 @@ public class GUI extends Application{
         Button buttonDistance = new Button("Distance");
         buttonDistance.setPrefSize(100, 20);
         buttonDistance.setOnAction(e ->
-                roots.setCenter(centerDistancePane()));
+                roots.setCenter(new DistanceConversion().getPane()));
 
 
         //--------------------------------------------------------------------------------------
@@ -70,29 +69,4 @@ public class GUI extends Application{
         hbox.getChildren().addAll(buttonWeight, buttonVolume, buttonDistance, buttonCurrency);
         return hbox;
     }
-
-
-
-    public GridPane centerVolumePane()
-    {
-        GridPane gridPane = new GridPane();
-        gridPane.setStyle("-fx-background-color: Violet");
-        return gridPane;
-    }
-
-    public GridPane centerDistancePane()
-    {
-        GridPane gridPane = new GridPane();
-        gridPane.setStyle("-fx-background-color: Grey");
-        return gridPane;
-    }
-
-    public GridPane centerCurrencyPane()
-    {
-        GridPane gridPane = new GridPane();
-        gridPane.setStyle("-fx-background-color: Green");
-        return gridPane;
-    }
-
-
 }

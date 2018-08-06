@@ -22,7 +22,7 @@ public class DistanceConversion {
     public GridPane getPane()
     {
         GridPane gridPane = new GridPane();
-        gridPane.setStyle("-fx-background-color: White");
+        gridPane.setStyle("-fx-background-color: Grey");
         gridPane.setHgap(10);
         gridPane.setVgap(10);
         gridPane.setPadding(new Insets(10,10,10,10));
@@ -53,51 +53,51 @@ public class DistanceConversion {
         final ToggleGroup groupLeft = new ToggleGroup();
 
 
-        RadioButton leftGrams = new RadioButton("Grams");
-        leftGrams.setToggleGroup(groupLeft);
+        RadioButton leftYards = new RadioButton("Yards");
+        leftYards.setToggleGroup(groupLeft);
         //leftGrams.setAlignment(Pos.TOP_LEFT);
-        leftGrams.setSelected(true);
-        gridPane.add(leftGrams, 0, 1);
+        leftYards.setSelected(true);
+        gridPane.add(leftYards, 0, 1);
 
-        RadioButton leftOz = new RadioButton("Oz");
-        leftOz.setToggleGroup(groupLeft);
+        RadioButton leftMiles = new RadioButton("Miles");
+        leftMiles.setToggleGroup(groupLeft);
         //leftOz.setAlignment(Pos.TOP_LEFT);
-        gridPane.add(leftOz, 0, 2);
+        gridPane.add(leftMiles, 0, 2);
 
-        RadioButton leftLbs = new RadioButton("lbs");
-        leftLbs.setToggleGroup(groupLeft);
+        RadioButton leftMeters = new RadioButton("Meters");
+        leftMeters.setToggleGroup(groupLeft);
         //leftLbs.setAlignment(Pos.TOP_LEFT);
-        gridPane.add(leftLbs, 0, 3);
+        gridPane.add(leftMeters, 0, 3);
 
-        RadioButton leftTon = new RadioButton("Ton");
-        leftTon.setToggleGroup(groupLeft);
+        RadioButton leftKilometers = new RadioButton("Kilometers");
+        leftKilometers.setToggleGroup(groupLeft);
         //leftTon.setAlignment(Pos.TOP_LEFT);
-        gridPane.add(leftTon, 0, 4);
+        gridPane.add(leftKilometers, 0, 4);
 
 
         final ToggleGroup groupRight = new ToggleGroup();
 
 
-        RadioButton rightGrams = new RadioButton("Grams");
-        rightGrams.setToggleGroup(groupRight);
+        RadioButton rightYards = new RadioButton("Yards");
+        rightYards.setToggleGroup(groupRight);
         //rightGrams.setAlignment(Pos.TOP_LEFT);
-        rightGrams.setSelected(true);
-        gridPane.add(rightGrams, 1, 1);
+        rightYards.setSelected(true);
+        gridPane.add(rightYards, 1, 1);
 
-        RadioButton rightOz = new RadioButton("Oz");
-        rightOz.setToggleGroup(groupRight);
+        RadioButton rightMiles = new RadioButton("Miles");
+        rightMiles.setToggleGroup(groupRight);
         //rightOz.setAlignment(Pos.TOP_LEFT);
-        gridPane.add(rightOz, 1, 2);
+        gridPane.add(rightMiles, 1, 2);
 
-        RadioButton rightLbs = new RadioButton("lbs");
-        rightLbs.setToggleGroup(groupRight);
+        RadioButton rightMeters = new RadioButton("Meters");
+        rightMeters.setToggleGroup(groupRight);
         //rightLbs.setAlignment(Pos.TOP_LEFT);
-        gridPane.add(rightLbs, 1, 3);
+        gridPane.add(rightMeters, 1, 3);
 
-        RadioButton rightTon = new RadioButton("Ton");
-        rightTon.setToggleGroup(groupRight);
+        RadioButton rightKilometers = new RadioButton("Kilometers");
+        rightKilometers.setToggleGroup(groupRight);
         //rightTon.setAlignment(Pos.TOP_LEFT);
-        gridPane.add(rightTon, 1, 4);
+        gridPane.add(rightKilometers, 1, 4);
 
 
         //----------------------------------------RadioButton Selected----------------------------------------------
@@ -106,19 +106,19 @@ public class DistanceConversion {
 
 
 
-            if(groupLeft.getSelectedToggle() == leftGrams)
+            if(groupLeft.getSelectedToggle() == leftYards)
             {
                 radioLeftSelection = 0;
             }
-            else if(groupLeft.getSelectedToggle() == leftOz)
+            else if(groupLeft.getSelectedToggle() == leftMiles)
             {
                 radioLeftSelection = 1;
             }
-            else if(groupLeft.getSelectedToggle() == leftLbs)
+            else if(groupLeft.getSelectedToggle() == leftMeters)
             {
                 radioLeftSelection = 2;
             }
-            else if(groupLeft.getSelectedToggle() == leftTon)
+            else if(groupLeft.getSelectedToggle() == leftKilometers)
             {
                 radioLeftSelection = 3;
             }
@@ -126,19 +126,19 @@ public class DistanceConversion {
 
 
 
-            if(groupRight.getSelectedToggle() == rightGrams)
+            if(groupRight.getSelectedToggle() == rightYards)
             {
                 radioRightSelection = 0;
             }
-            else if(groupRight.getSelectedToggle() == rightOz)
+            else if(groupRight.getSelectedToggle() == rightMiles)
             {
                 radioRightSelection = 1;
             }
-            else if(groupRight.getSelectedToggle() == rightLbs)
+            else if(groupRight.getSelectedToggle() == rightMeters)
             {
                 radioRightSelection = 2;
             }
-            else if(groupRight.getSelectedToggle() == rightTon)
+            else if(groupRight.getSelectedToggle() == rightKilometers)
             {
                 radioRightSelection = 3;
             }
@@ -152,30 +152,26 @@ public class DistanceConversion {
     }
 
     /*
-        1 g = 0.035274 oz
-        1 g = 0.00220462 lbs
-        1 g = 0.00000110231 tons
+        google
+        1 yard = 0.000568182
+        1 yard = 0.9144
+        1 yard = 0.0009144
 
-        1 oz = 1/.035274 grams
-        1 oz = 0.0625 lbs
-        1 oz = 0.00003125 tons
+        1 mile = 1760
+        1 mile = 1609.34
+        1 mile = 1.60933999997549
 
-        1 lbs = 1/0.00220462 grams
-        1 lbs = 1/0.0625 oz
-        1 lbs = 0.0005
+        1 meter = 1.0936105801618560829
+        1 meter = 0.0006213696478192363851
+        1 meter = 0.00099999751450000127877
 
-        1 ton = 1/0.00000110231 grams
-        1 ton = 1/0.00003125 oz
-        1 ton = 1/0.0005 lbs
-     */
+        1 kilometer = 1093.6105801618562055
+        1 kilometer = 0.62136964781923642587
+        1 kilometer = 999.99751450000121622
 
 
-    /*
-       Measurement Types
-       0 = Grams
-       1 = Oz
-       2 = lbs
-       3 = Ton
+
+
     */
 
     public String convert(String input, int leftType, int rightType)
@@ -185,7 +181,7 @@ public class DistanceConversion {
         switch(leftType)
         {
 
-            //-------------Gram to ? ---------------------------------------------
+            //-------------Yard to ? ---------------------------------------------
             case 0:
             {
                 if(rightType == 0)
@@ -194,27 +190,27 @@ public class DistanceConversion {
                 }
                 else if(rightType == 1)
                 {
-                    conversion = (Double.parseDouble(input)*0.035274);
+                    conversion = (Double.parseDouble(input)*0.000568182);
                     return this.toString(conversion);
                 }
                 else if(rightType == 2)
                 {
-                    conversion = Double.parseDouble(input)*0.00220462;
+                    conversion = Double.parseDouble(input)*0.9144;
                     return this.toString(conversion);
                 }
                 else if(rightType == 3)
                 {
-                    conversion = Double.parseDouble(input)*0.00000110231;
+                    conversion = Double.parseDouble(input)*0.0009144;
                     return this.toString(conversion);
                 }
             }break;
 
-            //-------------Oz to ? ---------------------------------------------
+            //-------------Mile to ? ---------------------------------------------
             case 1:
             {
                 if(rightType == 0)
                 {
-                    conversion = Double.parseDouble(input)/0.035274;
+                    conversion = Double.parseDouble(input)*1760;
                     return this.toString(conversion);
                 }
                 else if(rightType == 1)
@@ -223,27 +219,27 @@ public class DistanceConversion {
                 }
                 else if(rightType == 2)
                 {
-                    conversion = Double.parseDouble(input)*0.0625;
+                    conversion = Double.parseDouble(input)*1609.34;
                     return this.toString(conversion);
                 }
                 else if(rightType == 3)
                 {
-                    conversion = Double.parseDouble(input)*0.00003125;
+                    conversion = Double.parseDouble(input)*1.60933999997549;
                     return this.toString(conversion);
                 }
             }break;
 
-            //-------------lbs to ? ---------------------------------------------
+            //-------------Meter to ? ---------------------------------------------
             case 2:
             {
                 if(rightType == 0)
                 {
-                    conversion = Double.parseDouble(input)/0.00220462;
+                    conversion = Double.parseDouble(input)*1.0936105801618560829;
                     return this.toString(conversion);
                 }
                 else if(rightType == 1)
                 {
-                    conversion = Double.parseDouble(input)/0.0625;
+                    conversion = Double.parseDouble(input)*0.0006213696478192363851;
                     return this.toString(conversion);
                 }
                 else if(rightType == 2)
@@ -252,28 +248,28 @@ public class DistanceConversion {
                 }
                 else if(rightType == 3)
                 {
-                    conversion = Double.parseDouble(input)*0.0005;
+                    conversion = Double.parseDouble(input)*0.00099999751450000127877;
                     return this.toString(conversion);
                 }
 
             }break;
 
-            //-------------tons to ? ---------------------------------------------
+            //-------------Kilometer to ? ---------------------------------------------
             case 3:
             {
                 if(rightType == 0)
                 {
-                    conversion = Math.floor(((Double.parseDouble(input)/0.00000110231)* 100) / 100);
+                    conversion = Math.floor(Double.parseDouble(input)*1093.6105801618562055);
                     return this.toString(conversion);
                 }
                 else if(rightType == 1)
                 {
-                    conversion = Double.parseDouble(input)/0.00003125;
+                    conversion = Double.parseDouble(input)*0.62136964781923642587;
                     return this.toString(conversion);
                 }
                 else if(rightType == 2)
                 {
-                    conversion = Double.parseDouble(input)/0.0005;
+                    conversion = Double.parseDouble(input)*999.99751450000121622;
                     return this.toString(conversion);
                 }
                 else if(rightType == 3)
